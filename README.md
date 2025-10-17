@@ -1,2 +1,6 @@
 # Matrix-Calculator
-It is a program to solve matrix operations like converting matrix to row echelon, performing gauss seidel method, finding eigen values and eigen function and also dominant eigen values
+It is a program to solve matrix operations like 
+  1)converting matrix to row echelon
+  2)performing gauss seidel method
+  3)finding eigen values and eigen function
+  4)dominant eigen values
