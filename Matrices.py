@@ -1,11 +1,9 @@
-# Save as app.py
 from flask import Flask, request
 import numpy as np
 import math
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
-# -- Matrix Functions (Refactored for API) --
 
 def row_echelon(matrix):
     matrix = matrix.copy()
