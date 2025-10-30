@@ -873,7 +873,7 @@
       box.innerHTML = 'Computing<span class="loading"></span>';
       
       try {
-        const resp = await fetch('http://127.0.0.1:7432/api/matrix-calc', {
+        const resp = await fetch('https://student-projects-pn.conferit.com/api/matrix-calc', {
           method: 'POST',
           body: JSON.stringify(data),
           headers: { "Content-Type": "application/json" }

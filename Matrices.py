@@ -116,22 +116,15 @@ def dominant_eigen_value(A, Xt, iterations):
         Xt = A @ Xt
         maxi = np.max(Xt)
         Xt = np.round(Xt / maxi, decimals=4)
-        #output.append(f"AX{rep+1} = {maxi} x ")
         output.append(format_matrix(Xt,f"AX{rep+1} = {maxi} x "))
-    #print(Xt,type(Xt),flush=True)
     Xi = Xt.T
     num = A @ Xt
-    #print(num,type(num),flush=True)
-    #output.append(f"AX{iterations+1} =")
     output.append(format_matrix(num,f"AX{iterations+1} = "))
     num = np.round(Xi @ num, decimals=4)
-    #print("Num2",num,type(num),flush=True)
     output.append(f"Xᵀ{iterations+1}(*A*X{iterations+1}) = {num}")
     detn = np.round(Xi @ Xt, decimals=4)
-    #print("dent : ",detn,type(detn),flush=True)
     output.append(f"Xᵀ{iterations+1} * X{iterations+1} = {detn}")
     t=num / detn
-    #print(t,type(t),flush=True)
     output.append(f"Dominant Eigen Value: {np.round(t,4)}")
     return "\n".join(output)
 
@@ -144,8 +137,6 @@ def format_matrix(matrix,prechar):
         if prechar == "foreigen":
             row_values=row_values+' 0'
         rows_str.append(row_values)
-        #rows_str.append("0")
-    #print("Hey",flush=True)
     prechar="="
     return prechar + " [[" + "|".join(rows_str) + "]]"
 
@@ -178,4 +169,3 @@ def matrix_calc_api():
         return f"Error Here: {e}", 400
 if __name__ == '__main__':
     app.run(debug=True, port=7432)
-#https://student-projects-pn.conferit.com/api/matrix-calc
